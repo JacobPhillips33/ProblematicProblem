@@ -19,18 +19,18 @@ namespace ProblematicProblem
                  
             var userInput = Console.ReadLine().ToLower();
             cont = (userInput == "yes") ? true : false;
+            Console.WriteLine();
 
             while (userInput != "no" && userInput != "yes")
             {
-                Console.WriteLine();
                 Console.Write("Invalid entry. Please enter \"yes\" or \"no\": ");
                 userInput = Console.ReadLine().ToLower();
                 cont = (userInput == "yes") ? true : false;
+                Console.WriteLine();
 
             }
             if (cont)
             {
-                Console.WriteLine();
                 Console.Write("We are going to need your information first! What is your name? ");
                 string userName = Console.ReadLine();
                 Console.WriteLine();
