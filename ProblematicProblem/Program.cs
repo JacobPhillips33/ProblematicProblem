@@ -65,49 +65,49 @@ namespace ProblematicProblem
                         Console.WriteLine($"{activity} ");
                         Thread.Sleep(250);
                     }
+                }
+                Console.WriteLine();
+                Console.Write("Would you like to add any activities before we generate one? yes/no: ");
+
+                var userInput2 = Console.ReadLine().ToLower();
+                bool addToList = (userInput2 == "yes") ? true : false;
+
+                while (userInput2 != "no" && userInput2 != "yes")
+                {
                     Console.WriteLine();
-                    Console.Write("Would you like to add any activities before we generate one? yes/no: ");
+                    Console.Write("Invalid entry. Please enter \"yes\" or \"no\": ");
+                    userInput = Console.ReadLine().ToLower();
+                    addToList = (userInput2 == "yes") ? true : false;
 
-                    var userInput2 = Console.ReadLine().ToLower();
-                    bool addToList = (userInput2 == "yes") ? true : false;
+                }
 
-                    while (userInput2 != "no" && userInput2 != "yes")
+                Console.WriteLine();
+                while (addToList)
+                {
+                    Console.Write("What would you like to add? ");
+                    string userAddition = Console.ReadLine();
+                    activities.Add(userAddition);
+                    Console.WriteLine();
+                    foreach (string activity in activities)
                     {
-                        Console.WriteLine();
-                        Console.Write("Invalid entry. Please enter \"yes\" or \"no\": ");
-                        userInput = Console.ReadLine().ToLower();
-                        addToList = (userInput2 == "yes") ? true : false;
-
+                        Console.WriteLine($"{activity} ");
+                        Thread.Sleep(250);
                     }
-
                     Console.WriteLine();
-                    while (addToList)
-                    {
-                        Console.Write("What would you like to add? ");
-                        string userAddition = Console.ReadLine();
-                        activities.Add(userAddition);
-                        Console.WriteLine();
-                        foreach (string activity in activities)
-                        {
-                            Console.WriteLine($"{activity} ");
-                            Thread.Sleep(250);
-                        }
-                        Console.WriteLine();
-                        Console.Write("Would you like to add more? yes/no: ");
+                    Console.Write("Would you like to add more? yes/no: ");
                         
-                        var userInput3 = Console.ReadLine().ToLower();
+                    var userInput3 = Console.ReadLine().ToLower();
+                    addToList = (userInput3 == "yes") ? true : false;
+                    Console.WriteLine();
+
+                    while (userInput3 != "no" && userInput3 != "yes")
+                    {                            
+                        Console.Write("Invalid entry. Please enter \"yes\" or \"no\": ");
+                        userInput3 = Console.ReadLine().ToLower();
                         addToList = (userInput3 == "yes") ? true : false;
                         Console.WriteLine();
-
-                        while (userInput3 != "no" && userInput3 != "yes")
-                        {                            
-                            Console.Write("Invalid entry. Please enter \"yes\" or \"no\": ");
-                            userInput3 = Console.ReadLine().ToLower();
-                            addToList = (userInput3 == "yes") ? true : false;
-                            Console.WriteLine();
-                        }
                     }
-                }
+                }                
 
                 while (cont)
                 {
